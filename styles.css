@@ -1,0 +1,62 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1e1e1e;
+    margin: 0;
+}
+
+.button-container {
+    text-align: center;
+}
+
+.neon-button {
+    position: relative;
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 24px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: none;
+    border-radius: 5px;
+    background: transparent;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 5px #fff, 0 0 10px #ff00e8, 0 0 15px #ff00e8;
+}
+
+.neon-button:hover {
+    color: #ff00e8;
+    box-shadow: 0 0 20px #ff00e8, 0 0 30px #ff00e8, 0 0 40px #ff00e8;
+}
+
+.neon-button:before,
+.neon-button:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    z-index: -1;
+    opacity: 0.6;
+    background: inherit;
+    filter: blur(10px);
+}
+
+.neon-button:before {
+    animation: pulsate 1.5s infinite;
+}
+
+@keyframes pulsate {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
